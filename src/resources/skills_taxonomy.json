@@ -1,0 +1,117 @@
+{
+  "programming_languages": [
+    "Python", "Java", "JavaScript", "TypeScript", "C", "C++", "C#", "Go", "Golang",
+    "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Scala", "R", "MATLAB", "Julia",
+    "Perl", "Bash", "Shell", "PowerShell", "Objective-C", "Dart", "Lua", "Groovy",
+    "Haskell", "Elixir", "Clojure", "F#", "VB.NET", "Assembly", "COBOL", "Fortran"
+  ],
+  "web_frontend": [
+    "HTML", "HTML5", "CSS", "CSS3", "Sass", "SCSS", "Less", "Tailwind", "Tailwind CSS",
+    "Bootstrap", "Material UI", "Chakra UI", "React", "React.js", "Next.js", "Vue",
+    "Vue.js", "Nuxt.js", "Angular", "AngularJS", "Svelte", "SvelteKit", "jQuery",
+    "Redux", "MobX", "Zustand", "Webpack", "Vite", "Rollup", "Parcel", "Gatsby",
+    "Ember.js", "Backbone.js", "Alpine.js", "Lit", "Storybook", "Figma"
+  ],
+  "web_backend": [
+    "Node.js", "Express", "Express.js", "NestJS", "Fastify", "Koa", "Django",
+    "Flask", "FastAPI", "Tornado", "Pyramid", "Spring", "Spring Boot", "Hibernate",
+    "Ruby on Rails", "Laravel", "Symfony", "CodeIgniter", "ASP.NET", ".NET Core",
+    "Gin", "Echo", "Fiber", "Actix", "Rocket", "Phoenix", "GraphQL", "Apollo",
+    "REST", "REST API", "SOAP", "gRPC", "WebSockets", "OAuth", "OAuth2", "JWT"
+  ],
+  "mobile": [
+    "Android", "iOS", "React Native", "Flutter", "Xamarin", "Ionic", "Cordova",
+    "SwiftUI", "UIKit", "Jetpack Compose", "Kotlin Multiplatform", "Expo"
+  ],
+  "databases": [
+    "SQL", "MySQL", "PostgreSQL", "Postgres", "SQLite", "Microsoft SQL Server",
+    "MSSQL", "Oracle", "Oracle DB", "MariaDB", "MongoDB", "Cassandra", "Redis",
+    "DynamoDB", "Couchbase", "CouchDB", "Neo4j", "ArangoDB", "Firestore",
+    "Firebase Realtime Database", "Supabase", "Elasticsearch", "Solr", "InfluxDB",
+    "TimescaleDB", "Snowflake", "BigQuery", "Redshift", "Databricks", "ClickHouse",
+    "Presto", "Trino", "Hive", "HBase"
+  ],
+  "cloud_devops": [
+    "AWS", "Amazon Web Services", "EC2", "S3", "Lambda", "RDS", "CloudFront",
+    "CloudFormation", "Azure", "Microsoft Azure", "GCP", "Google Cloud Platform",
+    "Google Cloud", "Heroku", "DigitalOcean", "Linode", "Vercel", "Netlify",
+    "Docker", "Docker Compose", "Kubernetes", "K8s", "Helm", "Terraform", "Pulumi",
+    "Ansible", "Chef", "Puppet", "SaltStack", "Jenkins", "GitLab CI", "GitHub Actions",
+    "CircleCI", "Travis CI", "Bamboo", "TeamCity", "ArgoCD", "Spinnaker", "Nginx",
+    "Apache", "HAProxy", "Istio", "Linkerd", "Consul", "Vault", "Prometheus",
+    "Grafana", "Datadog", "New Relic", "Splunk", "ELK Stack", "Kibana", "Logstash",
+    "Fluentd", "OpenTelemetry", "PagerDuty"
+  ],
+  "data_engineering": [
+    "ETL", "ELT", "Apache Spark", "Spark", "PySpark", "Apache Kafka", "Kafka",
+    "Apache Airflow", "Airflow", "Apache Beam", "Apache Flink", "Flink",
+    "Apache Hadoop", "Hadoop", "MapReduce", "Apache NiFi", "dbt", "Fivetran",
+    "Stitch", "Informatica", "Talend", "SSIS", "Prefect", "Dagster", "Luigi",
+    "Apache Storm", "Databricks", "Data Warehousing", "Data Modeling",
+    "Dimensional Modeling", "Star Schema", "Snowflake Schema"
+  ],
+  "data_science_ml": [
+    "Machine Learning", "Deep Learning", "Neural Networks", "Supervised Learning",
+    "Unsupervised Learning", "Reinforcement Learning", "Computer Vision", "NLP",
+    "Natural Language Processing", "Time Series Analysis", "Recommender Systems",
+    "Clustering", "Classification", "Regression", "Feature Engineering",
+    "Model Selection", "Hyperparameter Tuning", "Cross Validation", "A/B Testing",
+    "Statistical Analysis", "Statistics", "Probability", "Bayesian Methods",
+    "scikit-learn", "sklearn", "TensorFlow", "Keras", "PyTorch", "JAX",
+    "XGBoost", "LightGBM", "CatBoost", "H2O", "MLflow", "Weights & Biases",
+    "Kubeflow", "SageMaker", "Vertex AI", "Hugging Face", "Transformers",
+    "LangChain", "LlamaIndex", "OpenAI API", "Anthropic API", "spaCy", "NLTK",
+    "Gensim", "OpenCV", "Pillow", "Pandas", "NumPy", "SciPy", "Matplotlib",
+    "Seaborn", "Plotly", "Bokeh", "Dash", "Streamlit", "Jupyter", "Tableau",
+    "Power BI", "Looker", "QlikView"
+  ],
+  "testing": [
+    "Unit Testing", "Integration Testing", "E2E Testing", "End-to-End Testing",
+    "TDD", "BDD", "Jest", "Mocha", "Chai", "Jasmine", "Cypress", "Playwright",
+    "Selenium", "WebdriverIO", "Puppeteer", "Appium", "Pytest", "unittest",
+    "JUnit", "TestNG", "Mockito", "RSpec", "Cucumber", "Postman", "SoapUI",
+    "JMeter", "LoadRunner", "Gatling", "k6"
+  ],
+  "security": [
+    "Cybersecurity", "Penetration Testing", "Pen Testing", "Vulnerability Assessment",
+    "OWASP", "Burp Suite", "Metasploit", "Nmap", "Wireshark", "Kali Linux",
+    "SIEM", "SOC", "IAM", "SSO", "SAML", "Zero Trust", "Cryptography",
+    "Encryption", "TLS", "SSL", "PKI", "Firewall", "IDS", "IPS", "DDoS Mitigation",
+    "ISO 27001", "SOC 2", "GDPR", "HIPAA", "PCI DSS"
+  ],
+  "version_control": [
+    "Git", "GitHub", "GitLab", "Bitbucket", "SVN", "Subversion", "Mercurial",
+    "Perforce"
+  ],
+  "methodologies": [
+    "Agile", "Scrum", "Kanban", "SAFe", "Waterfall", "Lean", "XP",
+    "Extreme Programming", "DevOps", "DevSecOps", "SRE", "Site Reliability Engineering",
+    "CI/CD", "Continuous Integration", "Continuous Deployment",
+    "Continuous Delivery", "Microservices", "Monolith", "Event-Driven Architecture",
+    "Domain-Driven Design", "DDD", "SOLID", "Design Patterns", "Clean Architecture",
+    "Hexagonal Architecture", "TDD", "Pair Programming", "Code Review"
+  ],
+  "tools_productivity": [
+    "Jira", "Confluence", "Trello", "Asana", "Linear", "Notion", "Monday.com",
+    "Slack", "Microsoft Teams", "Zoom", "Miro", "Lucidchart", "Draw.io",
+    "Visio", "Excel", "Microsoft Excel", "Google Sheets", "PowerPoint",
+    "Google Workspace", "Office 365"
+  ],
+  "soft_skills": [
+    "Communication", "Leadership", "Teamwork", "Problem Solving", "Critical Thinking",
+    "Time Management", "Project Management", "Stakeholder Management",
+    "Mentoring", "Coaching", "Public Speaking", "Presentation Skills",
+    "Negotiation", "Conflict Resolution", "Adaptability", "Creativity",
+    "Attention to Detail", "Analytical Thinking", "Decision Making", "Collaboration",
+    "Cross-functional Collaboration", "Customer Focus", "Strategic Thinking",
+    "Emotional Intelligence", "Empathy", "Self-motivated", "Ownership",
+    "Bias for Action"
+  ],
+  "domains": [
+    "FinTech", "HealthTech", "EdTech", "E-commerce", "SaaS", "B2B", "B2C",
+    "Gaming", "AdTech", "IoT", "Embedded Systems", "Robotics", "Blockchain",
+    "Cryptocurrency", "Web3", "Smart Contracts", "Ethereum", "Solidity",
+    "AR/VR", "Augmented Reality", "Virtual Reality", "Quantitative Finance",
+    "Algorithmic Trading", "Supply Chain", "Logistics"
+  ]
+}

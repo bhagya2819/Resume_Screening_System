@@ -1,0 +1,46 @@
+{
+  "doctorate": [
+    "PhD", "Ph.D.", "Ph.D", "Doctor of Philosophy", "Doctorate",
+    "Doctor of Science", "DSc", "D.Sc.", "Doctor of Engineering", "EngD",
+    "Doctor of Business Administration", "DBA", "Doctor of Medicine", "MD", "M.D."
+  ],
+  "masters": [
+    "Master of Science", "MS", "M.S.", "M.Sc.", "MSc",
+    "Master of Arts", "MA", "M.A.",
+    "Master of Engineering", "MEng", "M.Eng.",
+    "Master of Technology", "MTech", "M.Tech.", "M.Tech",
+    "Master of Business Administration", "MBA", "M.B.A.",
+    "Master of Computer Applications", "MCA", "M.C.A.",
+    "Master of Computer Science", "MCS",
+    "Master of Fine Arts", "MFA",
+    "Master of Public Health", "MPH",
+    "Master of Public Administration", "MPA",
+    "Master of Laws", "LLM", "LL.M.",
+    "Master's Degree", "Masters Degree", "Masters", "Master's"
+  ],
+  "bachelors": [
+    "Bachelor of Science", "BS", "B.S.", "B.Sc.", "BSc",
+    "Bachelor of Arts", "BA", "B.A.",
+    "Bachelor of Engineering", "BE", "B.E.", "BEng",
+    "Bachelor of Technology", "BTech", "B.Tech.", "B.Tech",
+    "Bachelor of Business Administration", "BBA", "B.B.A.",
+    "Bachelor of Computer Applications", "BCA", "B.C.A.",
+    "Bachelor of Computer Science", "BCS",
+    "Bachelor of Commerce", "BCom", "B.Com.",
+    "Bachelor of Laws", "LLB", "LL.B.",
+    "Bachelor's Degree", "Bachelors Degree", "Bachelors", "Bachelor's",
+    "Undergraduate Degree"
+  ],
+  "associate": [
+    "Associate Degree", "Associate of Arts", "AA", "A.A.",
+    "Associate of Science", "AS", "A.S.", "Associate of Applied Science", "AAS",
+    "Diploma", "Advanced Diploma"
+  ],
+  "certification": [
+    "AWS Certified", "Azure Certified", "GCP Certified",
+    "PMP", "Project Management Professional", "Scrum Master", "CSM",
+    "Product Owner", "CSPO", "CISSP", "CEH", "CCNA", "CCNP", "CCIE",
+    "Six Sigma", "Lean Six Sigma", "ITIL", "CompTIA Security+",
+    "CompTIA Network+", "CFA", "CPA"
+  ]
+}

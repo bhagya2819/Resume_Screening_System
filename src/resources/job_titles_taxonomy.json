@@ -1,0 +1,63 @@
+{
+  "engineering": [
+    "Software Engineer", "Software Developer", "Senior Software Engineer",
+    "Staff Software Engineer", "Principal Software Engineer", "Lead Software Engineer",
+    "Full Stack Developer", "Full Stack Engineer", "Frontend Developer",
+    "Frontend Engineer", "Backend Developer", "Backend Engineer",
+    "Mobile Developer", "iOS Developer", "Android Developer",
+    "Web Developer", "Application Developer", "Systems Engineer",
+    "Embedded Engineer", "Embedded Software Engineer", "Firmware Engineer",
+    "Game Developer", "Game Engineer", "QA Engineer", "Test Engineer",
+    "Automation Engineer", "SDET", "Software Development Engineer in Test",
+    "Release Engineer", "Build Engineer"
+  ],
+  "data": [
+    "Data Scientist", "Senior Data Scientist", "Principal Data Scientist",
+    "Data Analyst", "Senior Data Analyst", "Business Analyst",
+    "Data Engineer", "Senior Data Engineer", "Analytics Engineer",
+    "Machine Learning Engineer", "ML Engineer", "Senior ML Engineer",
+    "Applied Scientist", "Research Scientist", "AI Engineer",
+    "MLOps Engineer", "Data Architect", "BI Developer", "BI Analyst",
+    "Business Intelligence Analyst", "Statistician", "Quantitative Analyst"
+  ],
+  "devops_infra": [
+    "DevOps Engineer", "Senior DevOps Engineer", "Site Reliability Engineer",
+    "SRE", "Platform Engineer", "Infrastructure Engineer", "Cloud Engineer",
+    "Cloud Architect", "Solutions Architect", "AWS Engineer", "Azure Engineer",
+    "GCP Engineer", "Kubernetes Engineer", "Systems Administrator", "SysAdmin",
+    "Network Engineer", "Database Administrator", "DBA"
+  ],
+  "security": [
+    "Security Engineer", "Security Analyst", "Information Security Analyst",
+    "Cybersecurity Engineer", "Penetration Tester", "Ethical Hacker",
+    "Security Architect", "SOC Analyst", "Incident Response Analyst",
+    "CISO", "Chief Information Security Officer", "Application Security Engineer",
+    "AppSec Engineer"
+  ],
+  "product_design": [
+    "Product Manager", "Senior Product Manager", "Associate Product Manager",
+    "Group Product Manager", "Director of Product", "VP of Product",
+    "Chief Product Officer", "CPO", "Product Owner", "Product Designer",
+    "UX Designer", "UI Designer", "UX Researcher", "Interaction Designer",
+    "Visual Designer", "Design Lead", "Head of Design"
+  ],
+  "leadership": [
+    "Engineering Manager", "Senior Engineering Manager", "Director of Engineering",
+    "VP of Engineering", "Head of Engineering", "CTO", "Chief Technology Officer",
+    "Tech Lead", "Technical Lead", "Team Lead", "Technical Program Manager",
+    "TPM", "Program Manager", "Project Manager"
+  ],
+  "business": [
+    "Data Analyst", "Marketing Analyst", "Financial Analyst", "Business Analyst",
+    "Operations Analyst", "Operations Manager", "Account Manager",
+    "Customer Success Manager", "CSM", "Sales Engineer", "Solutions Engineer",
+    "Sales Representative", "Account Executive", "Marketing Manager",
+    "Growth Manager", "HR Manager", "Recruiter", "Technical Recruiter",
+    "Talent Acquisition"
+  ],
+  "internship": [
+    "Software Engineering Intern", "Software Intern", "Data Science Intern",
+    "Data Analyst Intern", "Product Management Intern", "Research Intern",
+    "Engineering Intern", "ML Intern", "UX Intern"
+  ]
+}

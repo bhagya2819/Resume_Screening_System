@@ -1,0 +1,29 @@
+Senior Data Scientist
+
+About the Role
+We are looking for a Senior Data Scientist to join our growing machine learning team.
+You will work on building recommendation systems, forecasting models, and NLP pipelines
+that power our core product experience.
+
+Required Qualifications
+- Bachelor's or Master's degree in Computer Science, Statistics, Mathematics, or a related field
+- 4+ years of experience in data science or applied machine learning
+- Strong proficiency in Python and SQL
+- Hands-on experience with scikit-learn, TensorFlow, or PyTorch
+- Experience with NLP techniques including TF-IDF, word embeddings, and transformer models
+- Familiarity with cloud platforms (AWS, GCP, or Azure)
+- Solid understanding of statistics, A/B testing, and experimental design
+
+Preferred Qualifications
+- PhD in a quantitative field
+- Experience with Apache Spark, Airflow, or dbt
+- Experience deploying ML models to production (MLflow, SageMaker, Vertex AI)
+- Contributions to open-source ML projects
+- Experience with recommender systems at scale
+
+Responsibilities
+- Design and train machine learning models for recommendations and forecasting
+- Collaborate with engineering to productionize models
+- Run experiments and analyze results
+- Mentor junior data scientists
+- Communicate findings to non-technical stakeholders
