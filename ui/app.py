@@ -23,6 +23,7 @@ from src.matching.jd_parser import (
 )
 from src.matching.ranker import rank_candidates
 from src.parsing.resume_parser import parse_resume
+from src.utils.run_logger import log_run
 
 
 st.set_page_config(page_title="Resume Screening System", layout="wide")
@@ -266,6 +267,16 @@ with tab_results:
                 min_score=st.session_state.threshold,
                 top_n=st.session_state.top_n,
             )
+            try:
+                log_run(
+                    st.session_state.jd,
+                    st.session_state.ranked,
+                    n_candidates_submitted=len(st.session_state.candidates),
+                    threshold=st.session_state.threshold,
+                    weights=st.session_state.weights,
+                )
+            except Exception:
+                pass  # Logging is best-effort; never fail a ranking run on a log error.
     with col_msg:
         if missing:
             st.info("Provide " + " and ".join(missing) + " first.")
