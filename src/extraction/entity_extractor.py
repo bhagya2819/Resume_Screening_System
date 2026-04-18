@@ -19,6 +19,7 @@ from src.parsing.resume_parser import ParsedResume
 @dataclass
 class ResumeEntities:
     source_filename: str
+    cleaned_text: str = ""
     name: str | None = None
     email: str | None = None
     phone: str | None = None
@@ -38,6 +39,7 @@ def extract_entities(resume: ParsedResume) -> ResumeEntities:
     header = resume.section("header") or text[:600]
     return ResumeEntities(
         source_filename=resume.filename,
+        cleaned_text=text,
         name=extract_name(header),
         email=extract_email(text),
         phone=extract_phone(text),

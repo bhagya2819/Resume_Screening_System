@@ -30,7 +30,11 @@ def _get_matcher() -> PhraseMatcher:
 
 
 def extract_skills(text: str) -> list[str]:
-    """Return skills from the taxonomy that appear in *text*, deduplicated."""
+    """Return skills from the taxonomy that appear in *text*, deduplicated.
+
+    Uses greedy longest-match so "Apache Spark" wins over "Apache" when both
+    patterns cover the same span.
+    """
     if not text:
         return []
 
@@ -38,9 +42,18 @@ def extract_skills(text: str) -> list[str]:
     doc = nlp.make_doc(text)  # tokenizer only — matcher doesn't need tags/ner
     matcher = _get_matcher()
 
+    spans = [(start, end) for _id, start, end in matcher(doc)]
+    # Longer spans first so shorter ones contained within them get dropped.
+    spans.sort(key=lambda s: (s[0], -(s[1] - s[0])))
+    kept: list[tuple[int, int]] = []
+    for start, end in spans:
+        if any(k_start <= start and end <= k_end for k_start, k_end in kept):
+            continue
+        kept.append((start, end))
+
     canonical_by_lower = {s.lower(): s for s in _load_skills()}
     found: set[str] = set()
-    for _match_id, start, end in matcher(doc):
+    for start, end in kept:
         lower = doc[start:end].text.lower()
         found.add(canonical_by_lower.get(lower, doc[start:end].text))
 
