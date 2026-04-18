@@ -76,3 +76,16 @@ def highest_tier(matches: list[EducationMatch]) -> str | None:
     if not matches:
         return None
     return max(matches, key=lambda m: m.rank).tier
+
+
+def tier_for_degree(name: str) -> str | None:
+    """Look up the tier for a raw degree string, case- and punctuation-tolerant."""
+    mapping = _load_degrees()
+    key = name.strip().lower()
+    if key in mapping:
+        return mapping[key]
+    normalized = key.replace(".", "")
+    for k, tier in mapping.items():
+        if k.replace(".", "") == normalized:
+            return tier
+    return None
