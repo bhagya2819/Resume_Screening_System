@@ -32,7 +32,8 @@ class ScoringWeights:
 
     def __post_init__(self) -> None:
         total = self.skills + self.semantic + self.experience + self.education
-        if abs(total - 1.0) > 1e-6:
+        # 1e-3 tolerance so UI sliders that normalize by division don't trip the check.
+        if abs(total - 1.0) > 1e-3:
             raise ValueError(f"Scoring weights must sum to 1.0, got {total}")
 
 
