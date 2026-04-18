@@ -1,40 +1,40 @@
 {
   "doctorate": [
     "PhD", "Ph.D.", "Ph.D", "Doctor of Philosophy", "Doctorate",
-    "Doctor of Science", "DSc", "D.Sc.", "Doctor of Engineering", "EngD",
-    "Doctor of Business Administration", "DBA", "Doctor of Medicine", "MD", "M.D."
+    "Doctor of Science", "D.Sc.", "Doctor of Engineering", "EngD",
+    "Doctor of Business Administration", "DBA", "Doctor of Medicine", "M.D."
   ],
   "masters": [
-    "Master of Science", "MS", "M.S.", "M.Sc.", "MSc",
-    "Master of Arts", "MA", "M.A.",
+    "Master of Science", "M.S.", "M.Sc.", "MSc",
+    "Master of Arts", "M.A.",
     "Master of Engineering", "MEng", "M.Eng.",
     "Master of Technology", "MTech", "M.Tech.", "M.Tech",
     "Master of Business Administration", "MBA", "M.B.A.",
     "Master of Computer Applications", "MCA", "M.C.A.",
-    "Master of Computer Science", "MCS",
+    "Master of Computer Science",
     "Master of Fine Arts", "MFA",
     "Master of Public Health", "MPH",
     "Master of Public Administration", "MPA",
     "Master of Laws", "LLM", "LL.M.",
-    "Master's Degree", "Masters Degree", "Masters", "Master's"
+    "Master's Degree", "Masters Degree", "Master's"
   ],
   "bachelors": [
-    "Bachelor of Science", "BS", "B.S.", "B.Sc.", "BSc",
-    "Bachelor of Arts", "BA", "B.A.",
-    "Bachelor of Engineering", "BE", "B.E.", "BEng",
+    "Bachelor of Science", "B.S.", "B.Sc.", "BSc",
+    "Bachelor of Arts", "B.A.",
+    "Bachelor of Engineering", "B.E.", "BEng",
     "Bachelor of Technology", "BTech", "B.Tech.", "B.Tech",
     "Bachelor of Business Administration", "BBA", "B.B.A.",
     "Bachelor of Computer Applications", "BCA", "B.C.A.",
-    "Bachelor of Computer Science", "BCS",
+    "Bachelor of Computer Science",
     "Bachelor of Commerce", "BCom", "B.Com.",
     "Bachelor of Laws", "LLB", "LL.B.",
-    "Bachelor's Degree", "Bachelors Degree", "Bachelors", "Bachelor's",
+    "Bachelor's Degree", "Bachelors Degree", "Bachelor's",
     "Undergraduate Degree"
   ],
   "associate": [
-    "Associate Degree", "Associate of Arts", "AA", "A.A.",
-    "Associate of Science", "AS", "A.S.", "Associate of Applied Science", "AAS",
-    "Diploma", "Advanced Diploma"
+    "Associate Degree", "Associate of Arts", "A.A.",
+    "Associate of Science", "A.S.", "Associate of Applied Science", "AAS",
+    "Advanced Diploma"
   ],
   "certification": [
     "AWS Certified", "Azure Certified", "GCP Certified",
