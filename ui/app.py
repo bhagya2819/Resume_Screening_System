@@ -24,9 +24,16 @@ from src.matching.jd_parser import (
 from src.matching.ranker import rank_candidates
 from src.parsing.resume_parser import parse_resume
 from src.utils.run_logger import log_run
+from ui.styles import (
+    inject_css,
+    render_candidate_card,
+    render_hero,
+    section_header,
+)
 
 
 st.set_page_config(page_title="Resume Screening System", layout="wide")
+inject_css()
 
 # --- Session state ---
 _defaults = {
@@ -46,8 +53,10 @@ for k, v in _defaults.items():
     st.session_state.setdefault(k, v)
 
 
-st.title("Resume Screening System")
-st.caption("Rank resumes against a job description using spaCy NER + TF-IDF.")
+render_hero(
+    "Resume Screening System",
+    "Rank resumes against a job description using spaCy NER + TF-IDF.",
+)
 
 
 # --- Sidebar: weights + threshold ---
@@ -86,7 +95,10 @@ tab_upload, tab_jd, tab_results = st.tabs(
 
 # ---- Tab 1: upload resumes ----
 with tab_upload:
-    st.subheader("Upload resumes (PDF or DOCX)")
+    section_header(
+        "Upload resumes (PDF or DOCX)",
+        "Drop multiple files — they're parsed in your session, never persisted.",
+    )
     files = st.file_uploader(
         "Drag and drop or browse",
         type=["pdf", "docx"],
@@ -119,8 +131,7 @@ with tab_upload:
                     st.error(f"{name}: {err}")
 
     if st.session_state.candidates:
-        st.divider()
-        st.subheader(f"Parsed resumes ({len(st.session_state.candidates)})")
+        section_header(f"Parsed resumes ({len(st.session_state.candidates)})")
         summary = pd.DataFrame(
             [
                 {
@@ -128,7 +139,7 @@ with tab_upload:
                     "Name": c.name or "",
                     "Email": c.email or "",
                     "Phone": c.phone or "",
-                    "YOE": c.yoe if c.yoe is not None else "",
+                    "YOE": c.yoe if c.yoe is not None else None,
                     "Skills found": len(c.skills),
                     "Degree": c.highest_degree_tier or "",
                     "Titles": ", ".join(c.titles[:3]),
@@ -136,12 +147,33 @@ with tab_upload:
                 for c in st.session_state.candidates
             ]
         )
-        st.dataframe(summary, use_container_width=True, hide_index=True)
+        st.dataframe(
+            summary,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "File": st.column_config.TextColumn("File", width="medium"),
+                "Name": st.column_config.TextColumn("Name", width="small"),
+                "Email": st.column_config.TextColumn("Email"),
+                "Phone": st.column_config.TextColumn("Phone"),
+                "YOE": st.column_config.NumberColumn("YOE", format="%d yr"),
+                "Skills found": st.column_config.NumberColumn(
+                    "Skills found",
+                    format="%d",
+                    help="Distinct skills detected in this resume",
+                ),
+                "Degree": st.column_config.TextColumn("Degree"),
+                "Titles": st.column_config.TextColumn("Titles"),
+            },
+        )
 
 
 # ---- Tab 2: configure JD ----
 with tab_jd:
-    st.subheader("Job description")
+    section_header(
+        "Job description",
+        "Choose any input mode — the ranking uses the same signals in all three.",
+    )
     mode_paste, mode_file, mode_form = st.tabs(
         ["Paste text", "Upload file", "Structured form"]
     )
@@ -224,9 +256,8 @@ with tab_jd:
             st.success("JD built.")
 
     if st.session_state.jd:
-        st.divider()
         jd = st.session_state.jd
-        st.subheader(jd.title or "Parsed JD")
+        section_header(jd.title or "Parsed JD")
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Required skills", len(jd.required_skills))
         c2.metric("Preferred skills", len(jd.preferred_skills))
@@ -238,7 +269,10 @@ with tab_jd:
 
 # ---- Tab 3: results ----
 with tab_results:
-    st.subheader("Ranked candidates")
+    section_header(
+        "Ranked candidates",
+        "Click Rank to score the uploaded resumes against the configured JD.",
+    )
 
     missing = []
     if not st.session_state.candidates:
@@ -286,60 +320,55 @@ with tab_results:
         if not ranked:
             st.warning("No candidates met the threshold. Lower the threshold or adjust weights.")
         else:
-            st.success(
-                f"{len(ranked)} candidate(s) above threshold "
-                f"{st.session_state.threshold:.2f}."
-            )
+            overall_scores = [r.score.overall for r in ranked]
+            top = max(overall_scores)
+            avg = sum(overall_scores) / len(overall_scores)
+
+            m1, m2, m3 = st.columns(3)
+            m1.metric("Candidates shown", len(ranked))
+            m2.metric("Top score", f"{top * 100:.1f}")
+            m3.metric("Average score", f"{avg * 100:.1f}")
+
+            df = ranked_to_dataframe(ranked)
             st.dataframe(
-                ranked_to_dataframe(ranked),
+                df,
                 use_container_width=True,
                 hide_index=True,
+                column_config={
+                    "Rank": st.column_config.NumberColumn("Rank", format="%d", width="small"),
+                    "Candidate": st.column_config.TextColumn("Candidate", width="medium"),
+                    "Overall": st.column_config.ProgressColumn(
+                        "Overall",
+                        help="Weighted overall score",
+                        format="%.1f",
+                        min_value=0,
+                        max_value=100,
+                    ),
+                    "Skills %": st.column_config.NumberColumn("Skills", format="%.0f%%"),
+                    "Semantic %": st.column_config.NumberColumn("Semantic", format="%.0f%%"),
+                    "Experience %": st.column_config.NumberColumn("Experience", format="%.0f%%"),
+                    "Education %": st.column_config.NumberColumn("Education", format="%.0f%%"),
+                    "YOE": st.column_config.NumberColumn("YOE", format="%d yr"),
+                    "Degree": st.column_config.TextColumn("Degree"),
+                    "Email": st.column_config.TextColumn("Email"),
+                    "Phone": st.column_config.TextColumn("Phone"),
+                    # Hide verbose columns in the on-screen table; the candidate
+                    # cards below show this info, and CSV/PDF export still includes it.
+                    "Filename": None,
+                    "Matched Required": None,
+                    "Missing Required": None,
+                    "Matched Preferred": None,
+                },
             )
 
-            st.divider()
-            st.subheader("Per-candidate details")
+            section_header(
+                "Per-candidate details",
+                "Matched / missing / preferred skills for each candidate.",
+            )
             for r in ranked:
-                label = r.entities.name or r.filename
-                with st.expander(
-                    f"#{r.rank} — {label}  ·  score {r.score.overall * 100:.1f}"
-                ):
-                    c1, c2, c3, c4 = st.columns(4)
-                    c1.metric("Skills", f"{r.score.skills * 100:.0f}%")
-                    c2.metric("Semantic", f"{r.score.semantic * 100:.0f}%")
-                    c3.metric("Experience", f"{r.score.experience * 100:.0f}%")
-                    c4.metric("Education", f"{r.score.education * 100:.0f}%")
+                render_candidate_card(r)
 
-                    matched = r.explanation.matched_required
-                    missing_req = r.explanation.missing_required
-                    preferred = r.explanation.matched_preferred
-                    st.markdown(
-                        "**Matched required:** "
-                        + (", ".join(f"`{s}`" for s in matched) or "—")
-                    )
-                    st.markdown(
-                        "**Missing required:** "
-                        + (", ".join(f"~~`{s}`~~" for s in missing_req) or "—")
-                    )
-                    st.markdown(
-                        "**Matched preferred:** "
-                        + (", ".join(f"`{s}`" for s in preferred) or "—")
-                    )
-
-                    c1, c2 = st.columns(2)
-                    c1.write(f"**Email:** {r.entities.email or '—'}")
-                    c2.write(f"**Phone:** {r.entities.phone or '—'}")
-                    c1, c2 = st.columns(2)
-                    c1.write(
-                        f"**YOE:** {r.entities.yoe if r.entities.yoe is not None else '—'} "
-                        f"(required: {r.explanation.yoe_required if r.explanation.yoe_required is not None else '—'})"
-                    )
-                    c2.write(
-                        f"**Degree:** {r.entities.highest_degree_tier or '—'} "
-                        f"(required: {r.explanation.degree_required or '—'})"
-                    )
-
-            st.divider()
-            st.subheader("Export")
+            section_header("Export")
             jd_title = st.session_state.jd.title if st.session_state.jd else None
             c1, c2 = st.columns(2)
             with c1:
